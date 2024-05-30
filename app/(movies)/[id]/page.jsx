@@ -2,6 +2,7 @@ import MovieVideos from './../../../components/movie-videos'
 import MovieInfo from './../../../components/movie-info'
 import { Suspense } from 'react'
 const MovieDetail = async ({ params: { id } }) => {
+  // 기존방식
   //const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)])
   //const trailer = videos.find((video) => video.type === 'Trailer')
   return (

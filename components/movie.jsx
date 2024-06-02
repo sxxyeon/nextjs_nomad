@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useRouter } from 'next/Navigation'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import styles from '../styles/component/movie.module.css'
 import Navigation from './navigation';

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/Navigation'
+import { usePathname } from 'next/navigation'
 import styles from '../styles/component/navigation.module.css'
 const Navigation = () => {
   const path = usePathname()

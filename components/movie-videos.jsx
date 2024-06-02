@@ -1,4 +1,5 @@
 import { API_URL } from './../app/(home)/page'
+import styles from '../styles/component/movie-videos.module.css'
 async function getVideos(id) {
   await new Promise((resolve) => setTimeout(resolve, 3000))
   console.log(Date.now())
@@ -8,15 +9,15 @@ async function getVideos(id) {
 }
 
 export default async function MovieVideos({ id }) {
+  
   const videos = await getVideos(id)
   const trailer = videos.find((video) => video.type === 'Trailer')
+
   return (
-    <>
+    <div className={styles.container}>
       <iframe
-        src={`https://www.youtube.com/embed/` + trailer.key}
-        width="100%"
-        height="600px"
+        src={trailer?.key? `https://www.youtube.com/embed/` + trailer.key : videos[0]}
       ></iframe>
-    </>
+    </div>
   )
 }

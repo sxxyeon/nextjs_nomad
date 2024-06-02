@@ -1,2 +1,3 @@
 #폴더 내부 파일 전부 제외
 node_modules/
+.next/

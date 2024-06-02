@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import Movie from './../../components/movie'
+import styles from '../../styles/pages/home.module.css'
 export const metadata = {
   title: 'home',
 }
@@ -13,28 +15,19 @@ async function getMovies() {
   return json
 }
 
-
-
 async function Home() {
   const movies = await getMovies()
-  console.log(movies)
+
   return (
-    <div>
-      <ul>
-        {movies.map((movie) => (
-          <li
-            key={movie.id}
-            style={{
-              background: `url(${movie.backdrop_path}) no-repeat`,
-              width: '500px',
-              height: '300px',
-              backgroundSize: 'contain',
-            }}
-          >
-            <Link href={`/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      {movies.map((movie) => (
+        <Movie
+          key={movie.id}
+          id={movie.id}
+          poster_path={movie.poster_path}
+          title={movie.title}
+        />
+      ))}
     </div>
   )
 }

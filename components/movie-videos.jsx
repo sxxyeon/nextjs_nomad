@@ -1,8 +1,8 @@
 import { API_URL } from './../app/(home)/page'
 import styles from '../styles/component/movie-videos.module.css'
 async function getVideos(id) {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
-  console.log(Date.now())
+  // await new Promise((resolve) => setTimeout(resolve, 3000))
+  // console.log(Date.now())
   const resp = await fetch(API_URL + `/${id}/videos`)
   const json = await resp.json()
   return json
